@@ -265,6 +265,18 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   font-weight: 500;
   color: #6E6E73;
 }
+/* The photo inside the card, so a new one can slide in through it while the last one slides out (home.js slideIn). */
+.card .pic { position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-size: cover; background-position: center; }
+.card .pic.moving {
+  -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card .name, .card .meta {
+  -webkit-transition: color 2s, opacity 0.35s 0.3s;
+  transition: color 2s, opacity 0.35s 0.3s;
+}
+.card .fresh { opacity: 0; -webkit-transition: none; transition: none; }
+.card .stale { opacity: 0; -webkit-transition: opacity 0.2s; transition: opacity 0.2s; }
 .night .card .img { background-color: #2C2C2E; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.32); }
 .night .card .name { color: #F5F5F7; }
 .night .card .meta { color: rgba(245, 245, 247, 0.62); }
